@@ -1,0 +1,57 @@
+{
+  "attachments": [
+    {
+      "fallback": "All tests passed.",
+      "color": "#36a64f",
+      "pretext": "Test results",
+      "title": "Mochawesome test report",
+      "title_link": "URL to build",
+      "fields": [
+        {
+          "title": "Tests: Pass number",
+          "value": "Failures: Fail number",
+          "short": false
+        }
+      ],
+      "footer": ""
+    },
+    {
+      "color": "#b3001b",
+      "blocks": [
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "plain_text",
+              "text": "Feature Name",
+              "emoji": true
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Failure Count*"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#36a64f",
+      "blocks": [
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "plain_text",
+              "text": "Feature Name",
+              "emoji": true
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*pass Count*"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
