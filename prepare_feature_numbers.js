@@ -1,5 +1,5 @@
 const path = require('path');
-let regexPattern = /@\w*/g
+let regexPattern = /@\S* /g
 
 let testArray = [];
 
