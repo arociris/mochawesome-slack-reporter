@@ -64,7 +64,7 @@ function results_to_markdown(res) { //Markdown table not yet supported by slack
     return markdown
 }
 
-function results_to_slack_fields_format(fileLocation, publishPassed, title, info, link) {
+function results_to_slack_fields_format(fileLocation, publishPassed, title, info, link, extraLink) {
     let reportData = require(path.join(process.cwd(), fileLocation))
     let output = require('./tpl.json');
     prepareTestResults(reportData.results);
@@ -117,7 +117,22 @@ function results_to_slack_fields_format(fileLocation, publishPassed, title, info
         }
     } else
         delete output.attachments[1]
+    if(extraLink){
+        output.attachments.push( {
 
+            "blocks": [
+                {
+                    "type": "section",
+                    "fields": [
+                        {
+                            "type": "mrkdwn",
+                            "text": `<${extraLink.link}|${extraLink.text}>`
+                        }
+                    ]
+                }
+            ]
+        })
+    }
     return output
 }
 

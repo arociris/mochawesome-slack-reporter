@@ -1,7 +1,7 @@
 const superagent = require('superagent');
 const dataPreparer = require('./prepare_feature_numbers');
 
-const pushToSlack = async ({slackWebHookUrl, pathToReport, publishPassed, title, info, link}) => {
+const pushToSlack = async ({slackWebHookUrl, pathToReport, publishPassed, title, info, link, extraLink}) => {
     const url = slackWebHookUrl || process.env.slacKWebHookUrl
     if (!url) {
         console.error("No web hook URL provided for slack posting. Exiting...");
