@@ -1,6 +1,6 @@
 {
   "name": "mochawesome-slack-reporter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple reporter for publishing your mochawesome test reports to slack",
   "main": "index.js",
   "scripts": {
