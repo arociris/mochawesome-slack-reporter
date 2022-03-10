@@ -8,7 +8,7 @@ const pushToSlack = async ({slackWebHookUrl, pathToReport, publishPassed, title,
         return
     }
     const path = pathToReport||'./mochawesome-report/mochawesome.json';
-    const formatted_data = dataPreparer.results_to_slack_fields_format(path, publishPassed,title,info,link);
+    const formatted_data = dataPreparer.results_to_slack_fields_format(path, publishPassed,title,info,link,extraLink);
     try {
         const res = await superagent.post(slackWebHookUrl).send(formatted_data)
         console.log("Slack message response code : "+ res.statusCode);
